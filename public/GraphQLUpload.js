@@ -10,24 +10,24 @@ const Upload = require("./Upload");
  * @name GraphQLUpload
  * @example <caption>Ways to `import`.</caption>
  * ```js
- * import { GraphQLUpload } from 'graphql-upload-minimal';
+ * import { GraphQLUpload } from 'graphql-upload-comartek';
  * ```
  *
  * ```js
- * import GraphQLUpload from 'graphql-upload-minimal/public/GraphQLUpload.js';
+ * import GraphQLUpload from 'graphql-upload-comartek/public/GraphQLUpload.js';
  * ```
  * @example <caption>Ways to `require`.</caption>
  * ```js
- * const { GraphQLUpload } = require('graphql-upload-minimal');
+ * const { GraphQLUpload } = require('graphql-upload-comartek');
  * ```
  *
  * ```js
- * const GraphQLUpload = require('graphql-upload-minimal/public/GraphQLUpload');
+ * const GraphQLUpload = require('graphql-upload-comartek/public/GraphQLUpload');
  * ```
  * @example <caption>Setup for a schema built with [`makeExecutableSchema`](https://apollographql.com/docs/graphql-tools/generate-schema#makeExecutableSchema).</caption>
  * ```js
  * const { makeExecutableSchema } = require('graphql-tools');
- * const { GraphQLUpload } = require('graphql-upload-minimal');
+ * const { GraphQLUpload } = require('graphql-upload-comartek');
  *
  * const schema = makeExecutableSchema({
  *   typeDefs: /* GraphQL *\/ `
@@ -45,7 +45,7 @@ const Upload = require("./Upload");
  *   GraphQLObjectType,
  *   GraphQLBoolean,
  * } = require('graphql');
- * const { GraphQLUpload } = require('graphql-upload-minimal');
+ * const { GraphQLUpload } = require('graphql-upload-comartek');
  *
  * const schema = new GraphQLSchema({
  *   mutation: new GraphQLObjectType({

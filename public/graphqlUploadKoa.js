@@ -14,26 +14,26 @@ const defaultProcessRequest = require("./processRequest");
  * @returns {Function} Koa middleware.
  * @example <caption>Ways to `import`.</caption>
  * ```js
- * import { graphqlUploadKoa } from 'graphql-upload-minimal';
+ * import { graphqlUploadKoa } from 'graphql-upload-comartek';
  * ```
  *
  * ```js
- * import graphqlUploadKoa from 'graphql-upload-minimal/public/graphqlUploadKoa.js';
+ * import graphqlUploadKoa from 'graphql-upload-comartek/public/graphqlUploadKoa.js';
  * ```
  * @example <caption>Ways to `require`.</caption>
  * ```js
- * const { graphqlUploadKoa } = require('graphql-upload-minimal');
+ * const { graphqlUploadKoa } = require('graphql-upload-comartek');
  * ```
  *
  * ```js
- * const graphqlUploadKoa = require('graphql-upload-minimal/public/graphqlUploadKoa');
+ * const graphqlUploadKoa = require('graphql-upload-comartek/public/graphqlUploadKoa');
  * ```
  * @example <caption>Basic [`graphql-api-koa`](https://npm.im/graphql-api-koa) setup.</caption>
  * ```js
  * const Koa = require('koa');
  * const bodyParser = require('koa-bodyparser');
  * const { errorHandler, execute } = require('graphql-api-koa');
- * const { graphqlUploadKoa } = require('graphql-upload-minimal');
+ * const { graphqlUploadKoa } = require('graphql-upload-comartek');
  * const schema = require('./schema');
  *
  * new Koa()

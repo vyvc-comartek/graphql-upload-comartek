@@ -49,19 +49,19 @@ const noop = () => {};
  * @type {ProcessRequestFunction}
  * @example <caption>Ways to `import`.</caption>
  * ```js
- * import { processRequest } from 'graphql-upload-minimal';
+ * import { processRequest } from 'graphql-upload-comartek';
  * ```
  *
  * ```js
- * import processRequest from 'graphql-upload-minimal/public/processRequest.js';
+ * import processRequest from 'graphql-upload-comartek/public/processRequest.js';
  * ```
  * @example <caption>Ways to `require`.</caption>
  * ```js
- * const { processRequest } = require('graphql-upload-minimal');
+ * const { processRequest } = require('graphql-upload-comartek');
  * ```
  *
  * ```js
- * const processRequest = require('graphql-upload-minimal/public/processRequest');
+ * const processRequest = require('graphql-upload-comartek/public/processRequest');
  * ```
  */
 module.exports = async function processRequest(
@@ -283,7 +283,7 @@ module.exports = async function processRequest(
                 createReadStream(...args) {
                     if (args && args.some(Boolean)) {
                         throw new Error(
-                            "graphql-upload-minimal does not support createReadStream() arguments. Use graphql-upload NPM module if you need this feature."
+                            "graphql-upload-comartek does not support createReadStream() arguments. Use graphql-upload NPM module if you need this feature."
                         );
                     }
 
@@ -291,9 +291,11 @@ module.exports = async function processRequest(
                     if (error) throw error;
 
                     if (returnedStreams.has(stream)) {
-                        throw new Error(
-                            "graphql-upload-minimal does not allow calling createReadStream() multiple times. Please, consume the previously returned stream. Make sure you're not referencing same file twice in your query."
-                        );
+                        // console.log(stream);
+                        // throw new Error(
+                        //     "graphql-upload-comartek does not allow calling createReadStream() multiple times. Please, consume the previously returned stream. Make sure you're not referencing same file twice in your query."
+                        // );
+                        return stream;
                     } else {
                         returnedStreams.add(stream);
                         return stream;
@@ -312,7 +314,7 @@ module.exports = async function processRequest(
 
             if (!operations && !map) {
                 return exit(
-                    `graphql-upload-minimal couldn't find any files or JSON. Looks like another middleware had processed this multipart request. Or maybe you are running in a cloud serverless function? Then see README.md.`,
+                    `graphql-upload-comartek couldn't find any files or JSON. Looks like another middleware had processed this multipart request. Or maybe you are running in a cloud serverless function? Then see README.md.`,
                     500
                 );
             }

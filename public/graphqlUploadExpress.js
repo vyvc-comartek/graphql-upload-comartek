@@ -14,25 +14,25 @@ const defaultProcessRequest = require("./processRequest");
  * @returns {Function} Express middleware.
  * @example <caption>Ways to `import`.</caption>
  * ```js
- * import { graphqlUploadExpress } from 'graphql-upload-minimal';
+ * import { graphqlUploadExpress } from 'graphql-upload-comartek';
  * ```
  *
  * ```js
- * import graphqlUploadExpress from 'graphql-upload-minimal/public/graphqlUploadExpress.js';
+ * import graphqlUploadExpress from 'graphql-upload-comartek/public/graphqlUploadExpress.js';
  * ```
  * @example <caption>Ways to `require`.</caption>
  * ```js
- * const { graphqlUploadExpress } = require('graphql-upload-minimal');
+ * const { graphqlUploadExpress } = require('graphql-upload-comartek');
  * ```
  *
  * ```js
- * const graphqlUploadExpress = require('graphql-upload-minimal/public/graphqlUploadExpress');
+ * const graphqlUploadExpress = require('graphql-upload-comartek/public/graphqlUploadExpress');
  * ```
  * @example <caption>Basic [`express-graphql`](https://npm.im/express-graphql) setup.</caption>
  * ```js
  * const express = require('express');
  * const graphqlHTTP = require('express-graphql');
- * const { graphqlUploadExpress } = require('graphql-upload-minimal');
+ * const { graphqlUploadExpress } = require('graphql-upload-comartek');
  * const schema = require('./schema');
  *
  * express()

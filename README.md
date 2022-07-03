@@ -1,6 +1,6 @@
-# graphql-upload-minimal
+# graphql-upload-comartek
 
-[![npm version](https://badgen.net/npm/v/graphql-upload-minimal)](https://npm.im/graphql-upload-minimal) [![CI status](https://github.com/flash-oss/graphql-upload-minimal/workflows/CI/badge.svg)](https://github.com/flash-oss/graphql-upload-minimal/actions)
+[![npm version](https://badgen.net/npm/v/graphql-upload-comartek)](https://npm.im/graphql-upload-comartek) [![CI status](https://github.com/flash-oss/graphql-upload-comartek/workflows/CI/badge.svg)](https://github.com/flash-oss/graphql-upload-comartek/actions)
 
 Minimalistic and developer friendly middleware and an [`Upload` scalar](#class-graphqlupload) to add support for [GraphQL multipart requests](https://github.com/jaydenseric/graphql-multipart-request-spec) (file uploads via queries and mutations) to various Node.js GraphQL servers.
 
@@ -46,7 +46,7 @@ Otherwise, **this module is a drop-in replacement for the `graphql-upload`**.
 The following environments are known to be compatible:
 
 - [Node.js](https://nodejs.org) versions 12, 14, 16, and 18. It works in Node 10 even though the unit tests fail.
-- [AWS Lambda](https://aws.amazon.com/lambda/). [Reported](https://github.com/flash-oss/graphql-upload-minimal/issues/4#issuecomment-664234726) to be working.
+- [AWS Lambda](https://aws.amazon.com/lambda/). [Reported](https://github.com/flash-oss/graphql-upload-comartek/issues/4#issuecomment-664234726) to be working.
 - [Google Cloud Functions (GCF)](https://cloud.google.com/functions) Experimental. Untested.
 - [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) Working.
 - [Koa](https://koajs.com)
@@ -56,10 +56,10 @@ See also [GraphQL multipart request spec server implementations](https://github.
 
 ## Setup
 
-To install [`graphql-upload-minimal`](https://npm.im/graphql-upload-minimal) and the [`graphql`](https://npm.im/graphql) peer dependency from [npm](https://npmjs.com) run:
+To install [`graphql-upload-comartek`](https://npm.im/graphql-upload-comartek) and the [`graphql`](https://npm.im/graphql) peer dependency from [npm](https://npmjs.com) run:
 
 ```shell
-npm install graphql-upload-minimal graphql
+npm install graphql-upload-comartek graphql
 ```
 
 Use the [`graphqlUploadKoa`](#function-graphqluploadkoa) or [`graphqlUploadExpress`](#function-graphqluploadexpress) middleware just before GraphQL middleware. Alternatively, use [`processRequest`](#function-processrequest) to create a custom middleware.
@@ -79,7 +79,7 @@ Express.js middleware. You must put it before the main GraphQL sever middleware.
 ```js
 const express = require("express");
 const expressGraphql = require("express-graphql");
-const { graphqlUploadExpress } = require("graphql-upload-minimal");
+const { graphqlUploadExpress } = require("graphql-upload-comartek");
 
 express()
   .use(
@@ -114,7 +114,7 @@ GraphQL resolvers:
 const { S3 } = require("aws-sdk");
 
 const resolvers = {
-  Upload: require("graphql-upload-minimal").GraphQLUpload,
+  Upload: require("graphql-upload-comartek").GraphQLUpload,
 
   Mutations: {
     async uploadDocuments(root, { docs }, ctx) {
@@ -143,10 +143,10 @@ See the [example Koa server and client](https://github.com/jaydenseric/apollo-up
 
 ### AWS Lambda
 
-[Reported](https://github.com/flash-oss/graphql-upload-minimal/issues/4#issuecomment-664234726) to be working.
+[Reported](https://github.com/flash-oss/graphql-upload-comartek/issues/4#issuecomment-664234726) to be working.
 
 ```js
-const { processRequest } = require("graphql-upload-minimal");
+const { processRequest } = require("graphql-upload-comartek");
 
 module.exports.processRequest = function (event) {
   return processRequest(event, null, { environment: "lambda" });
@@ -158,7 +158,7 @@ module.exports.processRequest = function (event) {
 Possible example. Experimental. Untested.
 
 ```js
-const { processRequest } = require("graphql-upload-minimal");
+const { processRequest } = require("graphql-upload-comartek");
 
 exports.uploadFile = function (req, res) {
   return processRequest(req, res, { environment: "gcf" });
@@ -170,7 +170,7 @@ exports.uploadFile = function (req, res) {
 Possible example. Working.
 
 ```js
-const { processRequest } = require("graphql-upload-minimal");
+const { processRequest } = require("graphql-upload-comartek");
 
 exports.uploadFile = function (context, req) {
   return processRequest(context, req, { environment: "azure" });
@@ -205,7 +205,7 @@ GraphQL resolvers:
 const { S3 } = require("aws-sdk");
 
 const resolvers = {
-  Upload: require("graphql-upload-minimal").GraphQLUpload,
+  Upload: require("graphql-upload-comartek").GraphQLUpload,
 
   Mutations: {
     async uploadDocuments(root, { docs }, ctx) {

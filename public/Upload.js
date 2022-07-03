@@ -10,19 +10,19 @@
  * @name Upload
  * @example <caption>Ways to `import`.</caption>
  * ```js
- * import { Upload } from 'graphql-upload-minimal';
+ * import { Upload } from 'graphql-upload-comartek';
  * ```
  *
  * ```js
- * import Upload from 'graphql-upload-minimal/public/Upload.js';
+ * import Upload from 'graphql-upload-comartek/public/Upload.js';
  * ```
  * @example <caption>Ways to `require`.</caption>
  * ```js
- * const { Upload } = require('graphql-upload-minimal');
+ * const { Upload } = require('graphql-upload-comartek');
  * ```
  *
  * ```js
- * const Upload = require('graphql-upload-minimal/public/Upload');
+ * const Upload = require('graphql-upload-comartek/public/Upload');
  * ```
  */
 module.exports = class Upload {

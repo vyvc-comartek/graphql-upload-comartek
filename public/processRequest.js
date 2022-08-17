@@ -119,6 +119,7 @@ module.exports = async function processRequest(
     return new Promise((resolve, reject) => {
         const parser = busboy({
             headers: req.headers,
+            defParamCharset: "utf8",
             limits: {
                 fieldSize: maxFieldSize,
                 fields: 2, // Only operations and map.

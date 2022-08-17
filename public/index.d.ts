@@ -2,6 +2,9 @@ import { IncomingMessage, ServerResponse } from "http";
 import { GraphQLScalarType } from "graphql";
 import { ReadStream } from "fs";
 
+import { RequestHandler } from "@types/express";
+import { DefaultContext, DefaultState, Middleware } from "@types/koa";
+
 export interface UploadOptions {
   maxFieldSize?: number | undefined;
   maxFileSize?: number | undefined;
@@ -35,3 +38,12 @@ export class Upload {
   promise: Promise<FileUpload>;
   file?: FileUpload;
 }
+
+export function graphqlUploadExpress(
+  uploadOptions?: UploadOptions
+): RequestHandler;
+
+export function graphqlUploadKoa<
+  StateT = DefaultState,
+  ContextT = DefaultContext
+>(uploadOptions?: UploadOptions): Middleware<StateT, ContextT>;

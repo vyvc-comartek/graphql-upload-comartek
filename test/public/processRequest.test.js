@@ -34,7 +34,7 @@ describe("processRequest", () => {
 
                 const upload = await operation.variables.input.docs[0].file.promise;
 
-                strictEqual(upload.filename, "a.txt");
+                strictEqual(upload.filename, "你好.txt");
                 strictEqual(upload.fieldName, "1");
                 strictEqual(upload.mimetype, "text/plain");
                 strictEqual(upload.encoding, "7bit");
@@ -64,7 +64,7 @@ describe("processRequest", () => {
                 })
             );
             body.append("map", JSON.stringify({ 1: ["variables.input.docs.0.file"] }));
-            body.append("1", "a", { filename: "a.txt" });
+            body.append("1", "a", { filename: "你好.txt" });
 
             await fetch(`http://localhost:${port}`, { method: "POST", body });
 
